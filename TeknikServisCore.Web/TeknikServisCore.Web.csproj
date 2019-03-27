@@ -256,4 +256,8 @@
     <ProjectReference Include="..\TeknikServisCore.Models\TeknikServisCore.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+
 </Project>

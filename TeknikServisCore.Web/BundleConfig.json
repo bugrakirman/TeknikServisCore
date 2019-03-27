@@ -2,7 +2,11 @@
     {
         "outputFileName": "wwwroot/bundle/styles.css",
         "inputFiles": [
+
+            "wwwroot/Themes/blue-free/css/font-awesome.min.css",
+            "wwwroot/Themes/blue-free/css/jquery.fancybox.css",
             "wwwroot/Themes/blue-free/css/bootstrap.min.css"
+
         ]
     },
     {

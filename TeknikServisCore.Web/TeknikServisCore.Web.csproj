@@ -258,6 +258,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Home\" />
+    <Folder Include="wwwroot\bundle\" />
   </ItemGroup>
 
 </Project>

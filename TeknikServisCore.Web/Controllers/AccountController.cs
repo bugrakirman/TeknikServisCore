@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TeknikServisCore.DAL;
 using TeknikServisCore.Models.IdentityModels;
+using TeknikServisCore.Models.ViewModels;
 
 namespace TeknikServisCore.Web.Controllers
 {
@@ -25,6 +26,21 @@ namespace TeknikServisCore.Web.Controllers
 
         public IActionResult Register()
         {
+            return View();
+        }
+
+        public IActionResult Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = new ApplicationUser()
+            {
+                 
+            };
+
             return View();
         }
     }

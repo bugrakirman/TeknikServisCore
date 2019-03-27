@@ -104,6 +104,8 @@ namespace TeknikServisCore.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+           
+
             app.UseCookiePolicy();
         }
     }

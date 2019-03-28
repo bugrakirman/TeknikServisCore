@@ -9,12 +9,19 @@ namespace TeknikServisCore.Models.ViewModels
 {
     public class RegisterViewModel
     {
+
         [Required,MinLength(2,ErrorMessage ="İsminiz 2 karakterden fazla olmalıdır."),MaxLength(15,ErrorMessage = "İsminiz 15 karakterden az olamaz."),DisplayName("Kullanıcı Adı")]
         public string Name { get; set; }
         [Required, MinLength(2, ErrorMessage = "Soyadınız 2 karakterden fazla olmalıdır."), MaxLength(25, ErrorMessage = "Soyadınız 25 karakterden az olamaz."), DisplayName("İsim")]
         public string Surname { get; set; }
         [Required, MinLength(2, ErrorMessage = "Kullanıcı adınız 2 karakterden fazla olmalıdır."), MaxLength(25, ErrorMessage = "Kullanıcı adınız 25 karakterden az olamaz."), DisplayName("Soyisim")]
         public string UserName { get; set; }
+        [Required, DataType("Email"), DisplayName("Email")]
+        public string Email { get; set; }
+        [Required, DataType("Email"), Compare("Email"), DisplayName("Email Tekrar")]
+        public bool EmailConfirmed { get; set; }
+        [Required, StringLength(11, ErrorMessage = "Telefon numaranız 11 haneli olmalıdır."), DisplayName("Telefon")]
+        public string PhoneNumber { get; set; }
         [Required, DisplayName("Doğum Tarihi")]
         public DateTime BirthDate { get; set; }
         [Required, MaxLength(25,ErrorMessage ="Şifreniz en fazla 25 karakter olabilir"),DisplayName("Şifre")]

@@ -184,60 +184,6 @@
     <None Include="wwwroot\Themes\black-dashboard-master\gulpfile.js" />
     <None Include="wwwroot\Themes\black-dashboard-master\LICENSE.md" />
     <None Include="wwwroot\Themes\black-dashboard-master\README.md" />
-    <None Include="wwwroot\Themes\blue-free\.DS_Store" />
-    <None Include="wwwroot\Themes\blue-free\css\animate.css" />
-    <None Include="wwwroot\Themes\blue-free\css\bootstrap.min.css" />
-    <None Include="wwwroot\Themes\blue-free\css\font-awesome.min.css" />
-    <None Include="wwwroot\Themes\blue-free\css\jquery.fancybox.css" />
-    <None Include="wwwroot\Themes\blue-free\css\jquery.fs.boxer.min.css" />
-    <None Include="wwwroot\Themes\blue-free\css\lightview.css" />
-    <None Include="wwwroot\Themes\blue-free\css\main.css" />
-    <None Include="wwwroot\Themes\blue-free\css\owl.carousel.css" />
-    <None Include="wwwroot\Themes\blue-free\css\slit-slider.css" />
-    <None Include="wwwroot\Themes\blue-free\css\superslides.css" />
-    <None Include="wwwroot\Themes\blue-free\fonts\fontawesome-webfont.eot" />
-    <None Include="wwwroot\Themes\blue-free\fonts\fontawesome-webfont.svg" />
-    <None Include="wwwroot\Themes\blue-free\fonts\fontawesome-webfont.ttf" />
-    <None Include="wwwroot\Themes\blue-free\fonts\fontawesome-webfont.woff" />
-    <None Include="wwwroot\Themes\blue-free\fonts\FontAwesome.otf" />
-    <None Include="wwwroot\Themes\blue-free\free-license.pdf" />
-    <None Include="wwwroot\Themes\blue-free\img\author.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\close.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\i_next.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\i_prev.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\left.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\map-marker.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\next.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\prev.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\quotes.png" />
-    <None Include="wwwroot\Themes\blue-free\img\icons\right.png" />
-    <None Include="wwwroot\Themes\blue-free\img\left.png" />
-    <None Include="wwwroot\Themes\blue-free\img\member-1.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\parallax\testimonial.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\portfolio\item.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\portfolio\item2.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\portfolio\item3.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\portfolio\item4.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\portfolio\item5.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\portfolio\item6.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\right.png" />
-    <None Include="wwwroot\Themes\blue-free\img\slider\affinity.jpeg" />
-    <None Include="wwwroot\Themes\blue-free\img\slider\banner.jpg" />
-    <None Include="wwwroot\Themes\blue-free\img\slider\cinelli.jpeg" />
-    <None Include="wwwroot\Themes\blue-free\img\slide_bg.png" />
-    <None Include="wwwroot\Themes\blue-free\index.html" />
-    <None Include="wwwroot\Themes\blue-free\js\bootstrap.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery-1.11.1.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery.ba-cond.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery.easing.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery.fancybox.pack.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery.parallax-1.1.3.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery.singlePageNav.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\jquery.slitslider.js" />
-    <None Include="wwwroot\Themes\blue-free\js\main.js" />
-    <None Include="wwwroot\Themes\blue-free\js\modernizr-2.6.2.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\owl.carousel.min.js" />
-    <None Include="wwwroot\Themes\blue-free\js\wow.min.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -258,7 +204,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Home\" />
-    <Folder Include="wwwroot\bundle\" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using TeknikServisCore.DAL;
 using TeknikServisCore.Models.IdentityModels;
+using TeknikServisCore.Models.ViewModels;
 
 namespace TeknikServisCore.Web
 {
@@ -71,9 +72,15 @@ namespace TeknikServisCore.Web
                 options.SlidingExpiration = true;
             });
 
-
+            services.AddAutoMapper();
             services.AddMvc();
+            Mapper.Initialize(cfg => MapConfig(cfg));
 
+            private void MapConfig(IMapperConfigurationExpression cfg)
+            {
+
+                cfg.CreateMap<RegisterViewModel, ApplicationUser>().ReverseMap();
+            }
             //services.AddWebOptimizer();
             //services.AddWebOptimizer(pipeline =>
             //{

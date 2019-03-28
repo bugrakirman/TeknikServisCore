@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using TeknikServisCore.DAL;
 using TeknikServisCore.Models.IdentityModels;
 using TeknikServisCore.Models.ViewModels;
+using TeknikServisCore.Models.Enums;
 
 namespace TeknikServisCore.Web.Controllers
 {
@@ -14,32 +15,92 @@ namespace TeknikServisCore.Web.Controllers
     {
 
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationDbContext _dbContext;
 
-        public AccountController(UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager,ApplicationDbContext dbContext)
+
+        public AccountController(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext dbContext)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
             _signInManager = signInManager;
             _dbContext = dbContext;
+
         }
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return View(model);
+
+                TempData["Message"] = ("Kayıt işlemi başarısız oldu. Girdiğiniz Bilgileri kontrol ediniz.");
+                return View("Register", model);
+            }
+            else
+            {
+                var user = Mapper.Map<ApplicationUser>(model);
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await CreateRoles();
+
+                    if (_userManager.Users.Count() == 1)
+                    {
+                        await _userManager.AddToRoleAsync(user, IdentityRoles.Admin.ToString());
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, IdentityRoles.User.ToString());
+                    }
+
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    var errMsg = "";
+
+                    foreach (var error in result.Errors)
+                    {
+                        errMsg += error.Code;
+                    }
+
+
+                    TempData["Message"] = (errMsg);
+                    return View("Register", model);
+                }
+
+
             }
 
-            var user = new ApplicationUser()
+        }
+
+        private async Task CreateRoles()
+        {
+            var roleNames = Enum.GetNames(typeof(IdentityRoles));
+
+            foreach (var roleName in roleNames)
             {
-                 
-            };
+                if (!_roleManager.RoleExistsAsync(roleName).Result)
+                {
+                    await _roleManager.CreateAsync(new ApplicationRole()
+                    {
+                        Name = roleName
+                    });
+                }
+            }
+        }
+
+        public IActionResult Login()
+        {
 
             return View();
         }

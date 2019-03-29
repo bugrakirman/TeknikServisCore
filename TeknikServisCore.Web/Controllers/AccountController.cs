@@ -8,6 +8,7 @@ using TeknikServisCore.DAL;
 using TeknikServisCore.Models.IdentityModels;
 using TeknikServisCore.Models.ViewModels;
 using TeknikServisCore.Models.Enums;
+using AutoMapper;
 
 namespace TeknikServisCore.Web.Controllers
 {
@@ -103,6 +104,30 @@ namespace TeknikServisCore.Web.Controllers
         {
 
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+
+            var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, true);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Register", "Account");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Kullanıcı adı veya şifre hatalı.");
+            }
+
+            return View(model);
+        }
+
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }

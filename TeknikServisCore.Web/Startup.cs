@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -76,11 +77,7 @@ namespace TeknikServisCore.Web
             services.AddMvc();
             Mapper.Initialize(cfg => MapConfig(cfg));
 
-            private void MapConfig(IMapperConfigurationExpression cfg)
-            {
-
-                cfg.CreateMap<RegisterViewModel, ApplicationUser>().ReverseMap();
-            }
+            
             //services.AddWebOptimizer();
             //services.AddWebOptimizer(pipeline =>
             //{
@@ -99,6 +96,11 @@ namespace TeknikServisCore.Web
             //    .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        }
+        private void MapConfig(IMapperConfigurationExpression cfg)
+        {
+
+            cfg.CreateMap<RegisterViewModel, ApplicationUser>().ReverseMap();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
